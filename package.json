@@ -1,0 +1,25 @@
+{
+  "name": "blog-django-yt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build -i src/tailwind.min.css -o public/css/tailwind.min.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammadanarul/Blog-Django-YT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammadanarul/Blog-Django-YT/issues"
+  },
+  "homepage": "https://github.com/mohammadanarul/Blog-Django-YT#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19"
+  }
+}

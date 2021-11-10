@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodingwithDjango | Home</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Dongle:wght@300;400;700&family=Lora:wght@400;500;600;700&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/tailwind.min.css">
+    <style>
+        /* This example part of kwd-dashboard see https://kamona-wd.github.io/kwd-dashboard/ */
+        /* So here we will write some classes to simulate dark mode and some of tailwind css config in our project */
+        :root {
+            --light: #edf2f9;
+            --dark: #152e4d;
+            --darker: #12263f;
+        }
+
+        .dark .dark\:text-light {
+            color: var(--light);
+        }
+
+        .dark .dark\:bg-dark {
+            background-color: var(--dark);
+        }
+
+        .dark .dark\:bg-darker {
+            background-color: var(--darker);
+        }
+
+        .dark .dark\:text-gray-300 {
+            color: #d1d5db;
+        }
+
+        .dark .dark\:text-indigo-500 {
+            color: #6366f1;
+        }
+
+        .dark .dark\:text-indigo-100 {
+            color: #e0e7ff;
+        }
+
+        .dark .dark\:hover\:text-light:hover {
+            color: var(--light);
+        }
+
+        .dark .dark\:border-indigo-800 {
+            border-color: #3730a3;
+        }
+
+        .dark .dark\:border-indigo-700 {
+            border-color: #4338ca;
+        }
+
+        .dark .dark\:bg-indigo-600 {
+            background-color: #4f46e5;
+        }
+
+        .dark .dark\:hover\:bg-indigo-600:hover {
+            background-color: #4f46e5;
+        }
+
+        .dark .dark\:border-indigo-500 {
+            border-color: #6366f1;
+        }
+
+        .hover\:overflow-y-auto:hover {
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="text-gray-600 shadow-xl">
+        <div class="container flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a href="./home.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+                <span class="ml-3 text-xl">CodingwithDjango</span>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <form action="">
+                    <input type="text" name="q" placeholder="search..."
+                        class="mr-4 py-2 pl-2 border-2 border-gray-500 focus:outline-none bg-white w-60 rounded-md">
+                </form>
+                <a href="./home.html" class="mr-5 hover:text-gray-900">Home</a>
+                <a href="./profile.html" class="mr-5 hover:text-gray-900">Profile</a>
+                <a href="./about.html" class="mr-5 hover:text-gray-900">About</a>
+            </nav>
+            <button
+                class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-white duration-300 rounded text-base mt-4 md:mt-0">
+                Login/Register
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <!-- end header section -->
+
+    <!-- main content section -->
+    <main class="text-gray-600">
+        <div class="grid grid-cols-12">
+            <div class="col-span-4">
+                <div @click.away="open = false"
+                    class="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0"
+                    x-data="{ open: false }">
+                    <div class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
+                        <a href="#"
+                            class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Flowtrail
+                            UI</a>
+                        <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline"
+                            @click="open = !open">
+                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                                <path x-show="!open" fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"></path>
+                                <path x-show="open" fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav :class="{'block': open, 'hidden': !open}"
+                        class="flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
+                        <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="#">Blog</a>
+                        <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="#">Portfolio</a>
+                        <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="#">About</a>
+                        <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="#">Contact</a>
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                            <button @click="open = !open"
+                                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                                <span>Dropdown</span>
+                                <svg fill="currentColor" viewBox="0 0 20 20"
+                                    :class="{'rotate-180': open, 'rotate-0': !open}"
+                                    class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                                x-transition:enter-start="transform opacity-0 scale-95"
+                                x-transition:enter-end="transform opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-75"
+                                x-transition:leave-start="transform opacity-100 scale-100"
+                                x-transition:leave-end="transform opacity-0 scale-95"
+                                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
+                                <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                        href="#">Link #1</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                        href="#">Link #2</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                        href="#">Link #3</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="col-span-8">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa itaque voluptatum nisi odio iure
+                corporis quam sunt nemo, illo placeat. Officia, repellendus illum totam adipisci fugiat mollitia beatae
+                vel laborum animi nobis doloribus quasi error, velit modi nam aperiam et inventore saepe omnis hic cum,
+                quaerat dignissimos voluptatum labore? Accusamus neque nostrum placeat nisi tempore quis aut eveniet
+                distinctio eius, quibusdam, ducimus ut vitae labore officia magnam? Molestiae voluptatem neque ratione,
+                sequi officia iure veritatis et itaque iste earum quibusdam quod ipsa officiis dignissimos omnis
+                deserunt quas perspiciatis sint harum aspernatur, error aperiam. Quod doloremque ullam animi odit
+                exercitationem aliquam.
+            </div>
+        </div>
+
+
+    </main>
+    <!-- main content section -->
+
+    <!-- start footer section -->
+    <footer class="text-gray-600 bg-gray-200">
+        <div class="container px-5 py-2 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+                <span class="ml-3 text-xl">CodingwithDjango</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
+                2021 CodingwithDjango —
+                <a href="https://facebook.com/mohammadanarul24" class="text-gray-600 ml-1" rel="noopener noreferrer"
+                    target="_blank">@mohammadanarul</a>
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <a href="https://www.facebook.com/mohammadanarul24/" class="text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/mohammadanarul1" class="ml-3 text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/mohammadanarul/" class="ml-3 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/mohammadanarul/" class="ml-3 text-gray-500">
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path stroke="none"
+                            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                        </path>
+                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/mohammadanarul" class="ml-3 text-gray-500">
+                    <img class="h-5 w-5" src="./images/youtube-icon.svg" alt="">
+                </a>
+            </span>
+        </div>
+    </footer>
+    <!-- end footer section -->
+
+    <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.6.x/dist/component.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script>
+        const setup = () => {
+            const getTheme = () => {
+                if (window.localStorage.getItem('dark')) {
+                    return JSON.parse(window.localStorage.getItem('dark'))
+                }
+                return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            }
+
+            const setTheme = (value) => {
+                window.localStorage.setItem('dark', value)
+            }
+
+            return {
+                loading: true,
+                isDark: getTheme(),
+                toggleTheme() {
+                    this.isDark = !this.isDark
+                    setTheme(this.isDark)
+                },
+                setLightTheme() {
+                    this.isDark = false
+                    setTheme(this.isDark)
+                },
+                setDarkTheme() {
+                    this.isDark = true
+                    setTheme(this.isDark)
+                },
+                watchScreen() {
+                    if (window.innerWidth <= 1024) {
+                        this.isSidebarOpen = false
+                    } else if (window.innerWidth >= 1024) {
+                        this.isSidebarOpen = true
+                    }
+                },
+                isSidebarOpen: window.innerWidth >= 1024 ? true : false,
+                toggleSidbarMenu() {
+                    this.isSidebarOpen = !this.isSidebarOpen
+                },
+                isNotificationsPanelOpen: false,
+                openNotificationsPanel() {
+                    this.isNotificationsPanelOpen = true
+                    this.$nextTick(() => {
+                        this.$refs.notificationsPanel.focus()
+                    })
+                },
+                isSettingsPanelOpen: false,
+                openSettingsPanel() {
+                    this.isSettingsPanelOpen = true
+                    this.$nextTick(() => {
+                        this.$refs.settingsPanel.focus()
+                    })
+                },
+                isSearchPanelOpen: false,
+                openSearchPanel() {
+                    this.isSearchPanelOpen = true
+                    this.$nextTick(() => {
+                        this.$refs.searchInput.focus()
+                    })
+                },
+            }
+        }
+    </script>
+</body>
+
+</html>
